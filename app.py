@@ -1,5 +1,7 @@
 
 
+
+
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, RTCConfiguration, VideoProcessorBase, WebRtcMode
 import mediapipe as mp
 import cv2
@@ -116,7 +118,7 @@ def main():
     st.text('')
     st.text('')
     st.subheader('Working of mediapipe')
-    st.image('/content/hand_tracking_3d_android_gpu.gif')
+    st.image('hand_tracking_3d_android_gpu.gif')
     st.markdown("""MediaPipe Hands utilizes an ML pipeline consisting of multiple models working together: A palm detection model that operates on the full image and returns an oriented hand bounding box. A hand landmark model that operates on the cropped image region defined by the palm detector and returns high-fidelity 3D hand keypoints. This strategy is similar to that employed in our MediaPipe Face Mesh solution, which uses a face detector together with a face landmark model.
      Providing the accurately cropped hand image to the hand landmark model drastically reduces the need for data augmentation (e.g. rotations, translation and scale) and instead allows the network to dedicate most of its capacity towards coordinate prediction accuracy. In addition, in our pipeline the crops can also be generated based on the hand landmarks identified in the previous frame, and only when the landmark model could no longer identify hand presence is palm detection invoked to relocalize the hand.""")
     st.text('-------------------------------------------------------------------------')
@@ -137,20 +139,31 @@ def main():
     st.markdown('2. **https://www.youtube.com/watch?v=Af5Y9bBLA7s**')
   
   elif(choice=='Working of the project'):
-    
-
-    webrtc_streamer(key="example", mode=WebRtcMode.SENDRECV, rtc_configuration=RTC_CONFIGURATION,
-                        video_processor_factory=Faceemotion,async_processing=True)
-    
-    st.text('Click on the button to start the video and please give permission to camera.')
-    st.text('---------------------------------------------------------------------------')
     st.text('')
     st.text('')
     st.text(' ')
+    st.text('')
+    st.text('')
+    st.text(' ')
+    st.text('')
+    webrtc_streamer(key="example", mode=WebRtcMode.SENDRECV, rtc_configuration=RTC_CONFIGURATION,
+                        video_processor_factory=Faceemotion,async_processing=True)
+    
+    st.markdown('**Click on the button to start the video and please give permission to camera.**')
+    st.text('---------------------------------------------------------------------------')
+    st.text('')
+    st.text('')
+    st.text('')
+    st.text(' ')
+    st.text('')
+    st.text(' ')
     st.subheader('Aspect of project:-')
-    st.markdown('1.If you place your hand in front of your camera then it will identify the motion of the hand.')
-    st.markdown('2.It identify right or left hand in motion.')
-    st.markdown('3.If you show finger then it will coun number of finger.')
+    st.text('')
+    st.text('')
+    st.text(' ')
+    st.markdown('**1.If you place your hand in front of your camera then it will identify the motion of the hand.**')
+    st.markdown('**2.It identify right or left hand in motion.**')
+    st.markdown('**3.If you show finger then it will coun number of finger.**')
     st.text('')
     st.text('')
     st.text(' ')
@@ -158,8 +171,8 @@ def main():
     st.text('')
     st.text(' ')
     st.subheader('Disclaimer:-')
-    st.markdown('1.:-Please place yur hand in front and wait for few second to showcase.')
-    st.markdown('2.Frame rate can be slow depending on the connection.')
+    st.markdown('**1.:-Please place yur hand in front and wait for few second to showcase.**')
+    st.markdown('**2.Frame rate can be slow depending on the connection.**')
   elif(choice=='About me'):
      st.header('About me')
      lottie_coding2=load_lottiefile("80680-online-study.json")
